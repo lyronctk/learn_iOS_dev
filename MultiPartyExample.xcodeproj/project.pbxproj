@@ -21,10 +21,11 @@
 		24C934D022315E66006D7657 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C934CD22315E66006D7657 /* Settings.swift */; };
 		24C934D122315E66006D7657 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C934CE22315E66006D7657 /* Utils.swift */; };
 		24D52666223169E900455F6B /* MultiPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D52665223169E900455F6B /* MultiPartyViewController.swift */; };
-		75EDF989420FEB6A0F61B269 /* libPods-TwilioVideo-MultiPartyExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91182D1914E7F5BBBCEE5B64 /* libPods-TwilioVideo-MultiPartyExample.a */; };
+		6697960FEA5A2C2705562695 /* Pods_TwilioVideo_MultiPartyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A47871BE14690C7C1CD6ED /* Pods_TwilioVideo_MultiPartyExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22A47871BE14690C7C1CD6ED /* Pods_TwilioVideo_MultiPartyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwilioVideo_MultiPartyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064F9A222EE48900BBA411 /* MultiPartyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiPartyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24064F9D222EE48900BBA411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24064F9F222EE48900BBA411 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		24C934CE22315E66006D7657 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		24D52665223169E900455F6B /* MultiPartyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPartyViewController.swift; sourceTree = "<group>"; };
 		3358EA68373D0044374935B7 /* Pods-TwilioVideo-MultiPartyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-MultiPartyExample.debug.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-MultiPartyExample/Pods-TwilioVideo-MultiPartyExample.debug.xcconfig"; sourceTree = "<group>"; };
-		91182D1914E7F5BBBCEE5B64 /* libPods-TwilioVideo-MultiPartyExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwilioVideo-MultiPartyExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C678BFE5F5F9F5FC84E784E5 /* Pods-TwilioVideo-MultiPartyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-MultiPartyExample.release.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-MultiPartyExample/Pods-TwilioVideo-MultiPartyExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EDF989420FEB6A0F61B269 /* libPods-TwilioVideo-MultiPartyExample.a in Frameworks */,
+				6697960FEA5A2C2705562695 /* Pods_TwilioVideo_MultiPartyExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 		83675BA88483CBD32EDF7B91 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				91182D1914E7F5BBBCEE5B64 /* libPods-TwilioVideo-MultiPartyExample.a */,
+				22A47871BE14690C7C1CD6ED /* Pods_TwilioVideo_MultiPartyExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,7 +161,6 @@
 				24064F96222EE48900BBA411 /* Sources */,
 				24064F97222EE48900BBA411 /* Frameworks */,
 				24064F98222EE48900BBA411 /* Resources */,
-				20F2D5EF68998886A82F92E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,23 +240,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		20F2D5EF68998886A82F92E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-MultiPartyExample/Pods-TwilioVideo-MultiPartyExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-MultiPartyExample/Pods-TwilioVideo-MultiPartyExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-MultiPartyExample/Pods-TwilioVideo-MultiPartyExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

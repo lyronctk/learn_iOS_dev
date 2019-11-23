@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xhD-KZ-95V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jSN-F6-Q4K">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -94,21 +94,6 @@
                                     <action selector="toggleMicWithSender:" destination="jSN-F6-Q4K" eventType="touchUpInside" id="WeT-d9-6OE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krA-sT-Z3g">
-                                <rect key="frame" x="15" y="808" width="80" height="44"/>
-                                <color key="backgroundColor" red="0.8862745098" green="0.1137254902" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="DiQ-eB-MAY"/>
-                                    <constraint firstAttribute="height" constant="44" id="hh5-kb-2iW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Disconnect">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="disconnectWithSender:" destination="jSN-F6-Q4K" eventType="touchUpInside" id="PjE-WV-6Eg"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="KzZ-AX-KaE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
@@ -126,12 +111,48 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aI9-6p-of9">
+                                <rect key="frame" x="100" y="824" width="214" height="48"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="30"/>
+                                <state key="normal" title="RECORD VIDEO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fFg-Iw-Fvg" kind="show" id="Hch-Ww-IH8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzJ-46-yN6">
+                                <rect key="frame" x="159" y="98" width="96" height="60"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="40"/>
+                                <state key="normal" title="CALL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="touch_button:" destination="jSN-F6-Q4K" eventType="touchDown" id="TqS-Nn-zaY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94N-9v-UDR">
+                                <rect key="frame" x="133" y="766" width="158" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="34"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="END CALL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="end_call_button_press:" destination="jSN-F6-Q4K" eventType="touchCancel" id="FDz-3c-XXq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aI9-6p-of9" firstAttribute="centerY" secondItem="3Bh-pO-6uY" secondAttribute="centerY" constant="400" id="0tl-yZ-GdJ"/>
                             <constraint firstItem="kuC-0b-lXR" firstAttribute="centerX" secondItem="3Bh-pO-6uY" secondAttribute="centerX" id="67k-NG-gCK"/>
+                            <constraint firstItem="aI9-6p-of9" firstAttribute="centerX" secondItem="3Bh-pO-6uY" secondAttribute="centerX" id="FaT-It-1fO"/>
                             <constraint firstItem="vJj-zm-UqW" firstAttribute="centerX" secondItem="3Bh-pO-6uY" secondAttribute="centerX" id="L7m-v1-lO3"/>
                             <constraint firstItem="vJj-zm-UqW" firstAttribute="centerY" secondItem="3Bh-pO-6uY" secondAttribute="centerY" constant="50" id="Mj6-qf-kI7"/>
+                            <constraint firstItem="FzJ-46-yN6" firstAttribute="centerX" secondItem="3Bh-pO-6uY" secondAttribute="centerX" id="Wb6-U2-WEv"/>
+                            <constraint firstItem="FzJ-46-yN6" firstAttribute="centerY" secondItem="3Bh-pO-6uY" secondAttribute="centerY" constant="-320" id="XnT-iP-QLx"/>
                             <constraint firstItem="kuC-0b-lXR" firstAttribute="centerY" secondItem="3Bh-pO-6uY" secondAttribute="centerY" constant="200" id="Yx5-Q0-VoP"/>
                             <constraint firstItem="KzZ-AX-KaE" firstAttribute="leading" secondItem="3Bh-pO-6uY" secondAttribute="leading" id="dWP-qW-5VP"/>
                             <constraint firstAttribute="bottom" secondItem="KzZ-AX-KaE" secondAttribute="bottom" id="fDb-Rl-chf"/>
@@ -140,18 +161,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GMB-wk-zrz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="5LO-Od-WsX">
-                            <connections>
-                                <segue destination="Xin-vM-N1V" kind="show" id="onD-9y-5HX"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="5LO-Od-WsX"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="call_button" destination="FzJ-46-yN6" id="U4Q-7V-mn6"/>
                         <outlet property="connectButton" destination="jgR-Qy-dC6" id="AHC-LZ-2fO"/>
-                        <outlet property="disconnectButton" destination="krA-sT-Z3g" id="bY5-b1-Kgm"/>
+                        <outlet property="disconnect_call_button" destination="94N-9v-UDR" id="OKC-B4-Rlh"/>
                         <outlet property="messageLabel" destination="ebq-ja-6iU" id="yjH-dj-KgF"/>
                         <outlet property="micButton" destination="rwp-9E-VzS" id="SW4-po-OHw"/>
                         <outlet property="previewView" destination="kuC-0b-lXR" id="pIF-Vo-cy7"/>
+                        <outlet property="record_video_button" destination="aI9-6p-of9" id="isF-1U-caX"/>
                         <outlet property="roomLabel" destination="Zud-AS-DEE" id="20X-Ci-kMk"/>
                         <outlet property="roomLine" destination="7dZ-Ur-uSj" id="FnZ-FM-uD0"/>
                         <outlet property="roomTextField" destination="EkL-i8-cDP" id="lGF-ox-K6d"/>
@@ -161,69 +180,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JfB-JL-3y4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="660.86956521739137" y="366.96428571428572"/>
+            <point key="canvasLocation" x="1571.0144927536232" y="366.96428571428572"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="9Wb-BQ-FN9">
+        <!--Record Video View Controller-->
+        <scene sceneID="wUK-83-Vsl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xhD-KZ-95V" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i57-Lg-dhx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jSN-F6-Q4K" kind="relationship" relationship="rootViewController" id="Sr4-Es-G84"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1gB-aZ-PTL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-124" y="367"/>
-        </scene>
-        <!--Settings Table View Controller-->
-        <scene sceneID="kRy-gS-eXs">
-            <objects>
-                <tableViewController id="Xin-vM-N1V" customClass="SettingsTableViewController" customModule="VideoCallKitQuickStart" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="J4Y-1Z-dsN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController storyboardIdentifier="RecordVideoViewController" id="fFg-Iw-Fvg" customClass="RecordVideoViewController" customModule="VideoCallKitQuickStart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mrp-0t-mME"/>
+                        <viewControllerLayoutGuide type="bottom" id="rKn-fd-TUn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jge-LY-x8l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SETTINGS-REUSE-IDENTIFIER" textLabel="Ujx-KD-5YT" detailTextLabel="SOU-Q9-TEA" style="IBUITableViewCellStyleValue1" id="zf9-2N-sjk">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zf9-2N-sjk" id="JlM-Ck-dbm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ujx-KD-5YT">
-                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOU-Q9-TEA">
-                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Xin-vM-N1V" id="BkW-HU-PbA"/>
-                            <outlet property="delegate" destination="Xin-vM-N1V" id="YVC-AY-1zi"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdr-eg-WtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkd-96-2sU">
+                                <rect key="frame" x="161" y="406" width="92" height="30"/>
+                                <state key="normal" title="Record Video">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="record:" destination="fFg-Iw-Fvg" eventType="touchUpInside" id="wLn-UC-U1i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zkd-96-2sU" firstAttribute="centerY" secondItem="Jge-LY-x8l" secondAttribute="centerY" id="6pP-UD-rQc"/>
+                            <constraint firstItem="Zkd-96-2sU" firstAttribute="centerX" secondItem="Jge-LY-x8l" secondAttribute="centerX" id="wca-Hx-7Bu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="a37-cr-JR7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XQg-ZC-bb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="366"/>
+            <point key="canvasLocation" x="2458" y="367"/>
         </scene>
     </scenes>
     <resources>

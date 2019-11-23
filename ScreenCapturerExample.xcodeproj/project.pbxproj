@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57745DD5E3C6637D0894EB2A /* Pods_TwilioVideo_ScreenCapturerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C023D9EEE1F194E0228BF191 /* Pods_TwilioVideo_ScreenCapturerExample.framework */; };
 		8AB81D9B1DED183B0021868E /* ExampleWebViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB81D9A1DED183B0021868E /* ExampleWebViewSource.swift */; };
 		8AC2285F1DECF14D00AF58EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2285D1DECF14D00AF58EA /* AppDelegate.swift */; };
 		8AC228601DECF14D00AF58EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC2285E1DECF14D00AF58EA /* ViewController.swift */; };
 		8AC228691DECF1B100AF58EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AC228671DECF1AE00AF58EA /* Assets.xcassets */; };
 		8AC2286E1DECF34E00AF58EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC2286A1DECF34E00AF58EA /* LaunchScreen.storyboard */; };
 		8AC2286F1DECF34E00AF58EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AC2286C1DECF34E00AF58EA /* Main.storyboard */; };
-		B9494732928D21F55E4946CA /* libPods-TwilioVideo-ScreenCapturerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A20373770DB6B92E2115FE1 /* libPods-TwilioVideo-ScreenCapturerExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		24B657BB22B1F8AE0057EBE6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ScreenCapturerExample/README.md; sourceTree = "<group>"; };
-		2A20373770DB6B92E2115FE1 /* libPods-TwilioVideo-ScreenCapturerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwilioVideo-ScreenCapturerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C93F9B3E3A3F6D19E8E18FD /* Pods-TwilioVideo-ScreenCapturerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-ScreenCapturerExample.debug.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-ScreenCapturerExample/Pods-TwilioVideo-ScreenCapturerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6BB2B9B04147489A6DB537B4 /* Pods-TwilioVideo-ScreenCapturerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-ScreenCapturerExample.release.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-ScreenCapturerExample/Pods-TwilioVideo-ScreenCapturerExample.release.xcconfig"; sourceTree = "<group>"; };
 		8AB81D9A1DED183B0021868E /* ExampleWebViewSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleWebViewSource.swift; sourceTree = "<group>"; };
@@ -29,6 +28,7 @@
 		8AC2286B1DECF34E00AF58EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8AC2286D1DECF34E00AF58EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8AF6E8491DECEEF600DFBE3E /* ScreenCapturerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenCapturerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C023D9EEE1F194E0228BF191 /* Pods_TwilioVideo_ScreenCapturerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwilioVideo_ScreenCapturerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9494732928D21F55E4946CA /* libPods-TwilioVideo-ScreenCapturerExample.a in Frameworks */,
+				57745DD5E3C6637D0894EB2A /* Pods_TwilioVideo_ScreenCapturerExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 		C47DF266D55FA914753B2A03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A20373770DB6B92E2115FE1 /* libPods-TwilioVideo-ScreenCapturerExample.a */,
+				C023D9EEE1F194E0228BF191 /* Pods_TwilioVideo_ScreenCapturerExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +129,6 @@
 				8AF6E8451DECEEF600DFBE3E /* Sources */,
 				8AF6E8461DECEEF600DFBE3E /* Frameworks */,
 				8AF6E8471DECEEF600DFBE3E /* Resources */,
-				D21A8CBE47408734031D129C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,24 +189,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D21A8CBE47408734031D129C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-ScreenCapturerExample/Pods-TwilioVideo-ScreenCapturerExample-frameworks.sh",
-				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-ScreenCapturerExample/Pods-TwilioVideo-ScreenCapturerExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		EF7BB4B00175329C2D4D7B8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

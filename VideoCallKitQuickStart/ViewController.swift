@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     
     // Configure access token manually for testing, if desired! Create one manually in the console
     // at https://www.twilio.com/console/video/runtime/testing-tools
-    var accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2U0MDU3ZDc4ZmI1NjQwOGE3NDMxNTJkYWMxZjEzYWYxLTE1NzQ1MDQwMDUiLCJpc3MiOiJTS2U0MDU3ZDc4ZmI1NjQwOGE3NDMxNTJkYWMxZjEzYWYxIiwic3ViIjoiQUNlNDY1MDAyNzg4OTNjY2NjMWFlZGMyZWRkOTYxMmU3MSIsImV4cCI6MTU3NDUwNzYwNSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYSIsInZpZGVvIjp7InJvb20iOiJNZWV0aW5nIn19fQ.VbVnAHamygHRTlx_YR07ylXR1SJwd3R4dQaVlVMw5VA"
+    var accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2U0MDU3ZDc4ZmI1NjQwOGE3NDMxNTJkYWMxZjEzYWYxLTE1NzQ1Mzg3MDgiLCJpc3MiOiJTS2U0MDU3ZDc4ZmI1NjQwOGE3NDMxNTJkYWMxZjEzYWYxIiwic3ViIjoiQUNlNDY1MDAyNzg4OTNjY2NjMWFlZGMyZWRkOTYxMmU3MSIsImV4cCI6MTU3NDU0MjMwOCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiYSIsInZpZGVvIjp7InJvb20iOiJNZWV0aW5nIn19fQ.f8NMpIump0Oee8_VygyzDfxYjbbp8Zm2_yeYEnO5TlU"
+
+    // Configure remote URL to fetch token from
+    let API_ROOT = "https://rp2k1rvvn3.execute-api.us-west-2.amazonaws.com/dev"
 
     // Configure remote URL to fetch token from
     var tokenUrl = "http://localhost:8000/token.php"
@@ -45,7 +48,6 @@ class ViewController: UIViewController {
     // MARK:- UI Element Outlets and handles
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var simulateIncomingButton: UIButton!
-    @IBOutlet weak var disconnectButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var roomTextField: UITextField!
     @IBOutlet weak var roomLine: UIView!
@@ -54,7 +56,41 @@ class ViewController: UIViewController {
     
     // `VideoView` created from a storyboard
     @IBOutlet weak var previewView: VideoView!
+    @IBOutlet weak var call_button: UIButton!
+    @IBOutlet weak var disconnect_call_button: UIButton!
+    @IBOutlet weak var record_video_button: UIButton!
+    
+    @IBAction func touch_button(_ sender: Any) {
+        let url = URL(string: API_ROOT + "/calls")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.httpMethod = "PUT"
 
+        let body = ["calling": true]
+        request.httpBody = try! JSONEncoder().encode(body)
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+            }
+        }
+        task.resume()
+        
+        setupRemoteVideoView()
+        performStartCallAction(uuid: UUID(), roomName: "Meeting")
+    }
+    
+    
+    @IBAction func end_call_button_press(_ sender: Any) {
+        disconnect()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         let configuration = CXProviderConfiguration(localizedName: "CallKit Quickstart")
         configuration.maximumCallGroups = 1
@@ -98,7 +134,7 @@ class ViewController: UIViewController {
         }
         
         // Disconnect and mic button will be displayed when the Client is connected to a Room.
-        self.disconnectButton.isHidden = true
+        self.disconnect_call_button.isHidden = true
         self.micButton.isHidden = true
         
         self.roomTextField.autocapitalizationType = .none
@@ -109,11 +145,24 @@ class ViewController: UIViewController {
 
         self.registerForLocalNotifications()
         
-        showRoomUI(inRoom: true)
-        performStartCallAction(uuid: UUID(), roomName: "meeting")
-        setupRemoteVideoView()
         
-        scheduledTimerWithTimeInterval()
+        hideAll()
+        
+//        scheduledTimerWithTimeInterval()
+    }
+    
+    
+    func hideAll() {
+        self.connectButton.isHidden = true
+        self.simulateIncomingButton.isHidden = true
+        self.roomTextField.isHidden = true
+        self.roomLine.isHidden = true
+        self.roomLabel.isHidden = true
+        self.micButton.isHidden = true
+        self.disconnect_call_button.isHidden = true
+        self.previewView.isHidden = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
 
@@ -125,17 +174,25 @@ class ViewController: UIViewController {
     func targetEndpointStatusResponse() -> Int {
         var res = 1
         let sem = DispatchSemaphore(value: 0)
-        let url = URL(string: "https://demo6542803.mockable.io/bridgeapp")
-        URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
+        let url = URL(string: API_ROOT + "/target_status")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
+
+        print("SENDING TO: \(API_ROOT + "/target_status")")
+        URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else { return }
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
+                print("json:" )
+                print(json)
                 res = Int(json["status"] as! String)!
                 sem.signal()
             } catch let error as NSError {
                 print(error)
             }
-        }).resume()
+        }.resume()
         sem.wait()
         
         return res;
@@ -180,25 +237,32 @@ class ViewController: UIViewController {
                                          toItem: self.view,
                                          attribute: NSLayoutConstraint.Attribute.centerY,
                                          multiplier: 1,
-                                         constant: -200);
+                                         constant: 0);
         self.view.addConstraint(centerY)
         let width = NSLayoutConstraint(item: self.remoteView!,
                                        attribute: NSLayoutConstraint.Attribute.width,
                                        relatedBy: NSLayoutConstraint.Relation.equal,
                                        toItem: self.view,
                                        attribute: NSLayoutConstraint.Attribute.width,
-                                       multiplier: 0.75,
-                                       constant: 0);
+                                       multiplier: 1,
+                                       constant: -200);
         self.view.addConstraint(width)
         let height = NSLayoutConstraint(item: self.remoteView!,
                                         attribute: NSLayoutConstraint.Attribute.height,
                                         relatedBy: NSLayoutConstraint.Relation.equal,
                                         toItem: self.view,
                                         attribute: NSLayoutConstraint.Attribute.height,
-                                        multiplier: 0.75,
+                                        multiplier: 1,
                                         constant: 0);
         self.view.addConstraint(height)
-        view.bringSubviewToFront(self.remoteView!)
+        self.view.bringSubviewToFront(self.remoteView!)
+        
+        self.disconnect_call_button.isHidden = false
+        self.previewView.isHidden = false
+        self.remoteView!.isHidden = false
+        
+        self.call_button.isHidden = true
+        self.record_video_button.isHidden = true
     }
 
     // MARK:- IBActions
@@ -207,11 +271,17 @@ class ViewController: UIViewController {
         self.dismissKeyboard()
     }
 
-    @IBAction func disconnect(sender: AnyObject) {
-        if let room = room, let uuid = room.uuid {
-            logMessage(messageText: "Attempting to disconnect from room \(room.name)")
+    @IBAction func disconnect() {
+        if let room = room {
             userInitiatedDisconnect = true
-            performEndCallAction(uuid: uuid)
+            performEndCallAction(uuid: room.uuid!)
+            
+            self.disconnect_call_button.isHidden = true
+            self.previewView.isHidden = true
+            self.remoteView!.isHidden = true
+            self.call_button.isHidden = true
+
+            self.record_video_button.isHidden = false
         }
     }
     
@@ -322,24 +392,7 @@ class ViewController: UIViewController {
             self.startPreview()
         }
     }
-
-    // Update our UI based upon if we are in a Room or not
-    func showRoomUI(inRoom: Bool) {
-        self.connectButton.isHidden = inRoom
-        self.simulateIncomingButton.isHidden = inRoom
-        self.roomTextField.isHidden = inRoom
-        self.roomLine.isHidden = inRoom
-        self.roomLabel.isHidden = inRoom
-        self.micButton.isHidden = inRoom
-        self.disconnectButton.isHidden = inRoom
-        self.navigationController?.setNavigationBarHidden(inRoom, animated: true)
-        UIApplication.shared.isIdleTimerDisabled = inRoom
-
-        // Show / hide the automatic home indicator on modern iPhones.
-        if #available(iOS 11.0, *) {
-            self.setNeedsUpdateOfHomeIndicatorAutoHidden()
-        }
-    }
+    
     
     @objc func dismissKeyboard() {
         if (self.roomTextField.isFirstResponder) {
@@ -418,7 +471,7 @@ extension ViewController : RoomDelegate {
 
         self.cleanupRemoteParticipant()
         self.room = nil
-        self.showRoomUI(inRoom: false)
+//        self.showRoomUI(inRoom: false)
         self.callKitCompletionHandler = nil
         self.userInitiatedDisconnect = false
     }
@@ -428,7 +481,7 @@ extension ViewController : RoomDelegate {
 
         self.callKitCompletionHandler!(false)
         self.room = nil
-        self.showRoomUI(inRoom: false)
+//        self.showRoomUI(inRoom: false)
     }
 
     func roomIsReconnecting(room: Room, error: Error) {

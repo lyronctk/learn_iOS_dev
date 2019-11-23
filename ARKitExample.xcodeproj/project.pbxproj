@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		085840EF6A01D70872BC7226 /* Pods_TwilioVideo_ARKitExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB098CD90BAE2617EA8406 /* Pods_TwilioVideo_ARKitExample.framework */; };
 		1C09649B1F3CF21B008F2C19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09649A1F3CF21B008F2C19 /* AppDelegate.swift */; };
 		1C09649D1F3CF21B008F2C19 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C09649C1F3CF21B008F2C19 /* art.scnassets */; };
 		1C09649F1F3CF21B008F2C19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09649E1F3CF21B008F2C19 /* ViewController.swift */; };
 		1C0964A21F3CF21B008F2C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0964A01F3CF21B008F2C19 /* Main.storyboard */; };
 		1C0964A41F3CF21B008F2C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0964A31F3CF21B008F2C19 /* Assets.xcassets */; };
 		1C0964A71F3CF21B008F2C19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0964A51F3CF21B008F2C19 /* LaunchScreen.storyboard */; };
-		97F2C17433C0925EF45428BF /* libPods-TwilioVideo-ARKitExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 925AAC1982ADA5E7B8506166 /* libPods-TwilioVideo-ARKitExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,7 +40,7 @@
 		1C0964A81F3CF21B008F2C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24A82E5822B189F9001EFC32 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ARKitExample/README.md; sourceTree = "<group>"; };
 		42123A879155B9BA47404710 /* Pods-TwilioVideo-ARKitExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-ARKitExample.release.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-ARKitExample/Pods-TwilioVideo-ARKitExample.release.xcconfig"; sourceTree = "<group>"; };
-		925AAC1982ADA5E7B8506166 /* libPods-TwilioVideo-ARKitExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TwilioVideo-ARKitExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78AB098CD90BAE2617EA8406 /* Pods_TwilioVideo_ARKitExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwilioVideo_ARKitExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE47B61638584DF78CF8AFBC /* Pods-TwilioVideo-ARKitExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-ARKitExample.debug.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-ARKitExample/Pods-TwilioVideo-ARKitExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97F2C17433C0925EF45428BF /* libPods-TwilioVideo-ARKitExample.a in Frameworks */,
+				085840EF6A01D70872BC7226 /* Pods_TwilioVideo_ARKitExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 		08501DD010A4BF022E99480E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				925AAC1982ADA5E7B8506166 /* libPods-TwilioVideo-ARKitExample.a */,
+				78AB098CD90BAE2617EA8406 /* Pods_TwilioVideo_ARKitExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,7 +119,6 @@
 				1C0964941F3CF21B008F2C19 /* Frameworks */,
 				1C0964951F3CF21B008F2C19 /* Resources */,
 				1C0964B11F3CF25B008F2C19 /* Embed Frameworks */,
-				0E9AACC7C49DEEDECBFBFFB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,24 +178,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E9AACC7C49DEEDECBFBFFB0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-ARKitExample/Pods-TwilioVideo-ARKitExample-frameworks.sh",
-				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-ARKitExample/Pods-TwilioVideo-ARKitExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8598898E2DB4CE4BA78DF302 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

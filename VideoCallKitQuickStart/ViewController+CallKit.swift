@@ -209,12 +209,12 @@ extension ViewController {
             if let preferredAudioCodec = Settings.shared.audioCodec {
                 builder.preferredAudioCodecs = [preferredAudioCodec]
             }
-            
+
             // Use the preferred video codec
             if let preferredVideoCodec = Settings.shared.videoCodec {
                 builder.preferredVideoCodecs = [preferredVideoCodec]
             }
-            
+
             // Use the preferred encoding parameters
             if let encodingParameters = Settings.shared.getEncodingParameters() {
                 builder.encodingParameters = encodingParameters
@@ -232,14 +232,14 @@ extension ViewController {
             // The CallKit UUID to assoicate with this Room.
             builder.uuid = uuid
         }
-        
+
         // Connect to the Room using the options we provided.
         room = TwilioVideoSDK.connect(options: connectOptions, delegate: self)
         
         logMessage(messageText: "Attempting to connect to room \(String(describing: roomName))")
-        
-        self.showRoomUI(inRoom: true)
-        
+
+//        self.showRoomUI(inRoom: true)
+
         self.callKitCompletionHandler = completionHandler
     }
 }

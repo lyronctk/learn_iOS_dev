@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B06031E238951D3005E5B5F /* RecordVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06031D238951D3005E5B5F /* RecordVideoViewController.swift */; };
+		0B060320238951FA005E5B5F /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06031F238951FA005E5B5F /* VideoHelper.swift */; };
 		24166E171DD3AE910004C634 /* ViewController+SimulateIncomingCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166E161DD3AE910004C634 /* ViewController+SimulateIncomingCall.swift */; };
 		24166E191DD3B0970004C634 /* ViewController+CallKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24166E181DD3B0970004C634 /* ViewController+CallKit.swift */; };
 		304A80C11C23350000CB8C03 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 304A80C01C23350000CB8C03 /* libc++.tbd */; };
@@ -25,6 +27,7 @@
 		8B79D46F1C2252A100489AA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B79D46D1C2252A100489AA5 /* Main.storyboard */; };
 		8B79D4711C2252A100489AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B79D4701C2252A100489AA5 /* Assets.xcassets */; };
 		8B79D4741C2252A100489AA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B79D4721C2252A100489AA5 /* LaunchScreen.storyboard */; };
+		B1AFD004CA57D4C6B5AC5633 /* Pods_VideoCallKitQuickStart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A3E2249E867A1586384CB5 /* Pods_VideoCallKitQuickStart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,9 +44,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		12FDFE66FC3E463B9DAFF803 /* Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig"; sourceTree = "<group>"; };
+		0B06031D238951D3005E5B5F /* RecordVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVideoViewController.swift; sourceTree = "<group>"; };
+		0B06031F238951FA005E5B5F /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		0BA271B12389726300A90E1A /* AWSCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AWSCore; path = Pods/AWSCore; sourceTree = "<group>"; };
+		0BA271B22389726300A90E1A /* AWSS3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AWSS3; path = Pods/AWSS3; sourceTree = "<group>"; };
 		24166E161DD3AE910004C634 /* ViewController+SimulateIncomingCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+SimulateIncomingCall.swift"; sourceTree = "<group>"; };
 		24166E181DD3B0970004C634 /* ViewController+CallKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+CallKit.swift"; sourceTree = "<group>"; };
+		2D1E7B31C86890CEF0390518 /* Pods-VideoCallKitQuickStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCallKitQuickStart.release.xcconfig"; path = "Target Support Files/Pods-VideoCallKitQuickStart/Pods-VideoCallKitQuickStart.release.xcconfig"; sourceTree = "<group>"; };
 		304A80C01C23350000CB8C03 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		304A80C21C23350500CB8C03 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		304A80C41C23350A00CB8C03 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -55,6 +62,9 @@
 		4B469DD61F75A1C900190112 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4B469DD71F75A1C900190112 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		4B469DD81F75A1C900190112 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		708AE9ED119ECFB8E87E1567 /* Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig"; sourceTree = "<group>"; };
+		7E86239547AB04FE15CE4E7C /* Pods-VideoCallKitQuickStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoCallKitQuickStart.debug.xcconfig"; path = "Target Support Files/Pods-VideoCallKitQuickStart/Pods-VideoCallKitQuickStart.debug.xcconfig"; sourceTree = "<group>"; };
+		88B3187E9B0E2977C1755A40 /* Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig"; sourceTree = "<group>"; };
 		8B79D4661C2252A100489AA5 /* VideoCallKitQuickStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCallKitQuickStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B79D4691C2252A100489AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B79D46B1C2252A100489AA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +72,7 @@
 		8B79D4701C2252A100489AA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B79D4731C2252A100489AA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B79D4751C2252A100489AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB3ADFAE21A96919B174CD3A /* Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig"; path = "Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig"; sourceTree = "<group>"; };
+		E4A3E2249E867A1586384CB5 /* Pods_VideoCallKitQuickStart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoCallKitQuickStart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,7 @@
 				304A80C51C23350A00CB8C03 /* VideoToolbox.framework in Frameworks */,
 				304A80C31C23350500CB8C03 /* AudioToolbox.framework in Frameworks */,
 				304A80C11C23350000CB8C03 /* libc++.tbd in Frameworks */,
+				B1AFD004CA57D4C6B5AC5633 /* Pods_VideoCallKitQuickStart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +108,8 @@
 		5A82245B3CA8AD8931FA33E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0BA271B12389726300A90E1A /* AWSCore */,
+				0BA271B22389726300A90E1A /* AWSS3 */,
 				304A80CE1C23352700CB8C03 /* SystemConfiguration.framework */,
 				304A80CC1C23352100CB8C03 /* CoreMedia.framework */,
 				304A80CA1C23351B00CB8C03 /* GLKit.framework */,
@@ -105,6 +118,7 @@
 				304A80C41C23350A00CB8C03 /* VideoToolbox.framework */,
 				304A80C21C23350500CB8C03 /* AudioToolbox.framework */,
 				304A80C01C23350000CB8C03 /* libc++.tbd */,
+				E4A3E2249E867A1586384CB5 /* Pods_VideoCallKitQuickStart.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,6 +168,8 @@
 				8B79D46B1C2252A100489AA5 /* ViewController.swift */,
 				24166E181DD3B0970004C634 /* ViewController+CallKit.swift */,
 				24166E161DD3AE910004C634 /* ViewController+SimulateIncomingCall.swift */,
+				0B06031D238951D3005E5B5F /* RecordVideoViewController.swift */,
+				0B06031F238951FA005E5B5F /* VideoHelper.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -170,8 +186,10 @@
 		F843596CF43DB7041D76599E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AB3ADFAE21A96919B174CD3A /* Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig */,
-				12FDFE66FC3E463B9DAFF803 /* Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig */,
+				708AE9ED119ECFB8E87E1567 /* Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig */,
+				88B3187E9B0E2977C1755A40 /* Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig */,
+				7E86239547AB04FE15CE4E7C /* Pods-VideoCallKitQuickStart.debug.xcconfig */,
+				2D1E7B31C86890CEF0390518 /* Pods-VideoCallKitQuickStart.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -183,12 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B79D4781C2252A100489AA5 /* Build configuration list for PBXNativeTarget "VideoCallKitQuickStart" */;
 			buildPhases = (
-				548CA0462BEAF4CCDB0BAD4E /* [CP] Check Pods Manifest.lock */,
+				77F6741BB470A1026BB269A4 /* [CP] Check Pods Manifest.lock */,
 				8B79D4621C2252A100489AA5 /* Sources */,
 				8B79D4631C2252A100489AA5 /* Frameworks */,
 				8B79D4641C2252A100489AA5 /* Resources */,
 				4BAA74E91D8A152A00239F19 /* Embed Frameworks */,
-				A6E3E42918DED564E612C3A0 /* [CP] Embed Pods Frameworks */,
+				8B5199BCEE18B52EAA89B6F2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,7 +229,7 @@
 				TargetAttributes = {
 					8B79D4651C2252A100489AA5 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = DUA28USUZ9;
+						DevelopmentTeam = 8C8GUSAER8;
 						LastSwiftMigration = 1000;
 					};
 				};
@@ -248,7 +266,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		548CA0462BEAF4CCDB0BAD4E /* [CP] Check Pods Manifest.lock */ = {
+		77F6741BB470A1026BB269A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,29 +281,33 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TwilioVideo-VideoCallKitQuickStart-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-VideoCallKitQuickStart-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A6E3E42918DED564E612C3A0 /* [CP] Embed Pods Frameworks */ = {
+		8B5199BCEE18B52EAA89B6F2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-VideoCallKitQuickStart/Pods-VideoCallKitQuickStart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${PODS_ROOT}/TwilioVideo/Build/iOS/TwilioVideo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwilioVideo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TwilioVideo-VideoCallKitQuickStart/Pods-TwilioVideo-VideoCallKitQuickStart-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoCallKitQuickStart/Pods-VideoCallKitQuickStart-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -295,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B060320238951FA005E5B5F /* VideoHelper.swift in Sources */,
 				8B79D46C1C2252A100489AA5 /* ViewController.swift in Sources */,
 				24166E171DD3AE910004C634 /* ViewController+SimulateIncomingCall.swift in Sources */,
 				4B469DDA1F75A3B100190112 /* SettingsTableViewController.swift in Sources */,
@@ -302,6 +325,7 @@
 				8B79D46A1C2252A100489AA5 /* AppDelegate.swift in Sources */,
 				24166E191DD3B0970004C634 /* ViewController+CallKit.swift in Sources */,
 				4B469DD91F75A3AE00190112 /* Settings.swift in Sources */,
+				0B06031E238951D3005E5B5F /* RecordVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,39 +461,41 @@
 		};
 		8B79D4791C2252A100489AA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3ADFAE21A96919B174CD3A /* Pods-TwilioVideo-VideoCallKitQuickStart.debug.xcconfig */;
+			baseConfigurationReference = 7E86239547AB04FE15CE4E7C /* Pods-VideoCallKitQuickStart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DUA28USUZ9;
+				DEVELOPMENT_TEAM = 8C8GUSAER8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = VideoCallKitQuickStart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lyronctk.BridgeVid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyronctk.BridgeVi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		8B79D47A1C2252A100489AA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12FDFE66FC3E463B9DAFF803 /* Pods-TwilioVideo-VideoCallKitQuickStart.release.xcconfig */;
+			baseConfigurationReference = 2D1E7B31C86890CEF0390518 /* Pods-VideoCallKitQuickStart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DUA28USUZ9;
+				DEVELOPMENT_TEAM = 8C8GUSAER8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = VideoCallKitQuickStart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lyronctk.BridgeVid;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lyronctk.BridgeVi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
